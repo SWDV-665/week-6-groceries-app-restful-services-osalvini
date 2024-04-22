@@ -1,8 +1,3 @@
-
-## Update Groceries Server with Docker-Compose (compatible version of MongoDB)
-
-See updated-groceries-server for more information on docker-compose file.
-
 # Getting MongoDB:2.6.4 running in a Docker container for use with NodeJS v9.11.1 and Mongoose v5.1.5
 
 ### NodeJS
@@ -108,7 +103,3 @@ the options [useUnifiedTopology] is not supported
 Grocery server listening on port  -  8080
 Connected to MongoDB
 ```
-
-
-
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/UkkT7Pi_)
