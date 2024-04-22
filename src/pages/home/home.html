@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- update template to iterate over the items directly instead of calling the loadItems() method. This makes it call over and over and should be called in the component class instead  so it loads the items without invoking repeatedly-->
+<ion-content padding>
+  <h3 class="no-item" text-center *ngIf="items.length === 0">
+    No items available in the list.
+  </h3>
+  <ion-list *ngIf="items.length > 0">
+    <ion-item-sliding *ngFor="let item of items; let i = index">
+      <ion-item>
+        <h2>{{item.name}}</h2>
+        <p>{{item.quantity}}</p>
+      </ion-item>
+      <!-- <ion-item>
+            <ion-select label="Select Quantity" label-placement="floating" fill="solid">
+              <ion-select-option value="1">1</ion-select-option>
+              <ion-select-option value="2">2</ion-select-option>
+              <ion-select-option value="3">3</ion-select-option>
+              <ion-select-option value="4">4</ion-select-option>
+              <ion-select-option value="5">5</ion-select-option>
+          </ion-select>
+          </ion-item> -->
+      <ion-item-options>
+        <button (click)="editItem(item, i)" ion-button color="primary" icon-start>
+          <ion-icon name="create"></ion-icon>
+          Edit
+        </button>
+
+        <button (click)="shareItem(item, i)" ion-button color="primary" icon-start>
+          <ion-icon name="share"></ion-icon>
+          Share
+        </button>
+
+        <button (click)="removeItem(item._id)" ion-button color="secondary" icon-start>
+          <ion-icon name="trash"></ion-icon>
+          Done
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab bottom right>
+    <button (click)="addItem()" ion-fab mini>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
